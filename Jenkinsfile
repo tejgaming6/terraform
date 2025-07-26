@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'codespace-agent' }  
+    agent { label 'codespace' }  
 
     environment {
         TF_DIR = "${WORKSPACE}"
