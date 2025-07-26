@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/tejgaming6/terraform-jenkins-pipeline.git'
+           git branch: 'main', url: 'https://github.com/tejgaming6/terraform-jenkins-pipeline.git'
             }
         }
 
