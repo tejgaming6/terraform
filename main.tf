@@ -1,3 +1,16 @@
+terraform {
+  required_providers {
+    null = {
+      source  = "hashicorp/null"
+      version = "~> 3.0"
+    }
+  }
+
+  required_version = ">= 0.13"
+}
+
+provider "null" {}
+
 resource "null_resource" "create_dirs_and_files" {
   provisioner "local-exec" {
     command = <<EOT
@@ -7,4 +20,3 @@ resource "null_resource" "create_dirs_and_files" {
     EOT
   }
 }
-
