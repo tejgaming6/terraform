@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'codespace-agent' }  
 
     environment {
         TF_DIR = "${WORKSPACE}"
@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/terraform-jenkins-pipeline.git'
+                git 'https://github.com/tejgaming6/terraform-jenkins-pipeline.git'
             }
         }
 
@@ -55,4 +55,3 @@ pipeline {
         }
     }
 }
-
