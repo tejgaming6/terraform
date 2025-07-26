@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'code' }  
+    agent { label 'lin1' }  
 
     environment {
         TF_DIR = "${WORKSPACE}"
