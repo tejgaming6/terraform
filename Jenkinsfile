@@ -10,11 +10,11 @@ pipeline {
      }
 
     stages {
-         stage('Clone Repo') {
+         /* stage('Clone Repo') {
             steps {
                 sh 'git clone --branch main https://github.com/tejgaming6/terraform-jenkins-pipeline.git .'
             }
-        }
+        } */
 
  stage('Terraform Init') {
             steps {
