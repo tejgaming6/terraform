@@ -1,6 +1,10 @@
 pipeline {
     agent { label 'lin1' }  
 
+options {
+        skipDefaultCheckout(true)
+     }
+
     stages {
          stage('Clone Repo') {
             steps {
