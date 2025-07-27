@@ -1,16 +1,13 @@
 pipeline {
     agent { label 'lin1' }  
 
+      environment {
+        TF_DIR = "${WORKSPACE}" 
+    }
+
  options {
         skipDefaultCheckout(true)
-
-     tools {
-        git 'linux1'
-    }
-
-    environment {
-        TF_DIR = "${WORKSPACE}"
-    }
+     }
 
     stages {
          stage('Clone Repo') {
@@ -19,7 +16,7 @@ pipeline {
             }
         }
 
-        stage('Terraform Init') {
+ stage('Terraform Init') {
             steps {
                 dir("${TF_DIR}") {
                     sh 'terraform init'
