@@ -5,10 +5,6 @@ pipeline {
         TF_DIR = "${WORKSPACE}" 
     }
 
- options {
-        skipDefaultCheckout(true)
-     }
-
     stages {
          stage('Clone Repo') {
             steps {
