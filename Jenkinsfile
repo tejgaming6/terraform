@@ -1,14 +1,21 @@
 pipeline {
     agent { label 'lin1' }  
 
+ options {
+        skipDefaultCheckout(true)
+
+     tools {
+        git 'linux1'
+    }
+
     environment {
         TF_DIR = "${WORKSPACE}"
     }
 
     stages {
-        stage('Clone Repository') {
+         stage('Clone Repo') {
             steps {
-           git branch: 'main', url: 'https://github.com/tejgaming6/terraform-jenkins-pipeline.git'
+                sh 'git clone --branch main https://github.com/tejgaming6/terraform-jenkins-pipeline.git .'
             }
         }
 
